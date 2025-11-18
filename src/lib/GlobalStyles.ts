@@ -1,5 +1,7 @@
-:root {
-  /*--- colors ---*/
+import { createGlobalStyle } from "styled-components";
+
+export const GlobalStyles = createGlobalStyle`
+:root{
   --surface: #393e46;
   --text: #eeeeee;
   --background: #222831;
@@ -12,30 +14,18 @@
   color-scheme: light dark;
   color: var(--text);
   background-color: var(--background);
+  }
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
+body{
   margin: 0;
   display: flex;
   place-items: center;
+  justify-content: center;
   min-width: 320px;
   min-height: 100vh;
-}
+  }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+  #root{
+  width:80%;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+`;

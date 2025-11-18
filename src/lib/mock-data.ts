@@ -1,5 +1,7 @@
 // mock-data.ts
-export const mockSubscriptions = [
+import type { Subscription } from "../types/types";
+
+export const mockSubscriptions: Subscription[] = [
   {
     id: "S12345",
     offerTitle: "Premium Monthly",

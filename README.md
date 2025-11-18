@@ -1,75 +1,71 @@
-# React + TypeScript + Vite
+# Subscription Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React application for viewing and managing user subscriptions with a responsive grid layout.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Subscription List**: View all active, paused, and canceled subscriptions
+- **Responsive Grid**: Automatically adjusts layout based on screen size
+- **Cancel Subscriptions**: Mark subscriptions as canceled
+- **Styled Components**: Modern UI with styled-components
 
-## React Compiler
+## Getting Started
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+### Installation
 
-Note: This will impact Vite dev & build performances.
+Install dependencies using Bun:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+bun install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Start the development server:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+bun run dev
 ```
+
+The app will be available at `http://localhost:5173` (or the next available port if 5173 is in use). The development server includes hot module replacement (HMR) for instant updates as you edit the code.
+
+### Build
+
+Create a production build:
+
+```bash
+bun run build
+```
+
+The optimized build will be output to the `dist/` directory.
+
+### Testing
+
+Run the test suite in watch mode:
+
+```bash
+bun run test
+```
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── SubscriptionCard.tsx      # Individual subscription card
+│   ├── SubscriptionList.tsx      # Grid of subscription cards
+│   └── *.test.tsx                # Component tests
+├── hooks/
+│   ├── useSubscriptions.ts       # Hook for subscription data
+│   └── useSubscriptions.test.ts  # Hook tests
+├── lib/
+│   ├── GlobalStyles.ts           # Global CSS styles
+│   └── mock-data.ts              # Mock subscription data
+└── types/
+    └── types.ts                  # TypeScript type definitions
+```
+
+## Testing
+
+The test suite was created using agentic AI to ensure comprehensive coverage of the application's core functionality. Tests include component rendering states (loading, error, empty, and populated), user interactions (subscription cancellation), and custom hook behavior (data fetching and state management). All tests are written with Vitest and React Testing Library.
+

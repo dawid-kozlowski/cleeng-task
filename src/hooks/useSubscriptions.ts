@@ -7,6 +7,12 @@ const useSubscriptions = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  // If the data neeeded to be accessed by multiple comopnents without loading it in I would
+  // use react context/zustand/tanstack Query here. Tanstack especially has some nice
+  // loading and error props.
+
+  // However in the current task scenario I don't see a valid reason to implement redux.
+
   useEffect(() => {
     const fetchData = async () => {
       try {
