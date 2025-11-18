@@ -3,3 +3,10 @@
   gap: 5rem;
   grid-template-columns: repeat(3, 1fr);
 }
+
+.message {
+  grid-column: 1 / -1;
+  font-size: 1.5rem;
+  justify-self: center;
+  text-shadow: 0 0 1rem var(--accent);
+}

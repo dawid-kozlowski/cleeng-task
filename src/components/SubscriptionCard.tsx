@@ -9,17 +9,16 @@ interface SubscriptionCardProps {
     currency: string;
     nextPaymentDate: string;
   };
+  onCancel: () => void;
 }
 
-function SubscriptionCard({ data }: SubscriptionCardProps) {
+function SubscriptionCard({ data, onCancel }: SubscriptionCardProps) {
   const date = new Date(data.nextPaymentDate);
-
   const options: Intl.DateTimeFormatOptions = {
     year: "numeric",
     month: "long",
     day: "numeric",
   };
-
   const formatted = date.toLocaleDateString("en-US", options);
 
   const headers = [
@@ -38,10 +37,9 @@ function SubscriptionCard({ data }: SubscriptionCardProps) {
   return (
     <div className={styles.container}>
       {headers.map((field) => (
-        <div className={styles.innerContainer}>
+        <div key={field.key} className={styles.innerContainer}>
           <p className={styles.category}>{field.key}</p>
           <p
-            key={field.key}
             style={
               field.key === "Status"
                 ? { color: statusColors[field.value] || "inherit" }
@@ -52,8 +50,8 @@ function SubscriptionCard({ data }: SubscriptionCardProps) {
           </p>
         </div>
       ))}
-
       <button
+        onClick={onCancel}
         disabled={data.status === "canceled"}
         className={styles.cancelButton}
         type="button"
@@ -63,5 +61,4 @@ function SubscriptionCard({ data }: SubscriptionCardProps) {
     </div>
   );
 }
-
 export default SubscriptionCard;

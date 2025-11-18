@@ -51,5 +51,5 @@ p {
 }
 
 .cancelButton:active {
-  text-shadow: 0 0 0.5rem var(--accent);
+  background-color: var(--accent);
 }
