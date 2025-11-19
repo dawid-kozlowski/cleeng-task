@@ -46,6 +46,7 @@ Run the test suite in watch mode:
 ```bash
 bun run test
 ```
+The test suite was created using agentic AI to ensure comprehensive coverage of the application's core functionality. Tests include component rendering states (loading, error, empty, and populated), user interactions (subscription cancellation), and custom hook behavior (data fetching and state management). All tests are written with Vitest and React Testing Library.
 
 ## Project Structure
 
@@ -64,8 +65,3 @@ src/
 └── types/
     └── types.ts                  # TypeScript type definitions
 ```
-
-## Testing
-
-The test suite was created using agentic AI to ensure comprehensive coverage of the application's core functionality. Tests include component rendering states (loading, error, empty, and populated), user interactions (subscription cancellation), and custom hook behavior (data fetching and state management). All tests are written with Vitest and React Testing Library.
-
