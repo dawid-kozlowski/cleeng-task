@@ -13,7 +13,7 @@ A React application for viewing and managing user subscriptions with a responsiv
 
 ### Prerequisites
 
-This project uses [Bun](https://bun.sh) as the package manager and runtime. If you don't have Bun installed, you can install it with:
+This project uses [Bun](https://bun.sh) as the package manager. If you don't have Bun installed, you can install it with:
 
 ```bash
 # macOS, Linux, and WSL
