@@ -11,12 +11,32 @@ A React application for viewing and managing user subscriptions with a responsiv
 
 ## Getting Started
 
-### Installation
+### Prerequisites
 
-Install dependencies using Bun:
+This project uses [Bun](https://bun.sh) as the package manager and runtime. If you don't have Bun installed, you can install it with:
 
 ```bash
+# macOS, Linux, and WSL
+curl -fsSL https://bun.sh/install | bash
+
+# Windows (PowerShell)
+powershell -c "irm bun.sh/install.ps1 | iex"
+```
+
+For more installation options, visit [https://bun.sh/docs/installation](https://bun.sh/docs/installation).
+
+**Alternatively**, you can use npm if you prefer not to install Bun.
+
+### Installation
+
+Install dependencies:
+
+```bash
+# Using Bun
 bun install
+
+# Or using npm
+npm install
 ```
 
 ### Development
@@ -24,7 +44,11 @@ bun install
 Start the development server:
 
 ```bash
+# Using Bun
 bun run dev
+
+# Or using npm
+npm run dev
 ```
 
 The app will be available at `http://localhost:5173` (or the next available port if 5173 is in use). The development server includes hot module replacement (HMR) for instant updates as you edit the code.
@@ -34,7 +58,11 @@ The app will be available at `http://localhost:5173` (or the next available port
 Create a production build:
 
 ```bash
+# Using Bun
 bun run build
+
+# Or using npm
+npm run build
 ```
 
 The optimized build will be output to the `dist/` directory.
@@ -44,8 +72,14 @@ The optimized build will be output to the `dist/` directory.
 Run the test suite in watch mode:
 
 ```bash
+# Using Bun
 bun run test
+
+# Or using npm
+npm run test
 ```
+
+The test suite was created using agentic AI to ensure comprehensive coverage of the application's core functionality. Tests include component rendering states (loading, error, empty, and populated), user interactions (subscription cancellation), and custom hook behavior (data fetching and state management). All tests are written with Vitest and React Testing Library.
 
 ## Project Structure
 
@@ -64,8 +98,3 @@ src/
 └── types/
     └── types.ts                  # TypeScript type definitions
 ```
-
-## Testing
-
-The test suite was created using agentic AI to ensure comprehensive coverage of the application's core functionality. Tests include component rendering states (loading, error, empty, and populated), user interactions (subscription cancellation), and custom hook behavior (data fetching and state management). All tests are written with Vitest and React Testing Library.
-
